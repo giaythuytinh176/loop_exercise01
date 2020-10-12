@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+
+Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+
+Bài 8: Game đoán số
+
+Nâng cấp game "Hãy thử đoán xem!"
+
+1. Thiết kế giao diện: Giao diện chỉ gồm 1 Button "Chơi": cho phép người dùng bắt đầu  chơi hoặc chơi lại  
+
+2. Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:
+
+Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn  
+Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán  
+Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.
+Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi  
+Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại.
+
+-->
+
+<script>
+
+
+
+    // Tim 30 so dau tien chia het cho 7
+    let n = 1;
+    let count = 1;
+    let sum = 0;
+    while (n > 0) {
+        let fbnc = fibonaci(n);
+        if (fbnc % 7 == 0) {
+            document.write("Day la " + count + " chia het cho 7: " + fbnc + "<br>");
+            count++;
+            if (count == 30){
+                sum += fbnc;
+                document.write("Tong cua 30 so dau tien la: " + sum + "<br>");
+                break;
+            }
+        }
+        n++;
+    }
+
+    function fibonaci(n) {
+        let F;
+        if (n == 1) return F = 1;
+        if (n == 2) return F = 1;
+        F = (1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n));
+        //f(1) = 1;
+        //f(2) = 1;
+        //f(n) = f(n-1) + f(n-2);
+        return F;
+    }
+
+</script>
+
+
+</body>
+</html>
