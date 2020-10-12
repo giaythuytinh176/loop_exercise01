@@ -35,19 +35,31 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
 <script>
 
     let n = 1;
-    let count = 0;
+    let count = 1;
     let sum = 0;
     while (n > 0) {
         let fbnc = fibonaci(n);
-        document.write("Day la so dau tien chia het cho 5: " + fbnc + "<br>");
-        count++;
-        if (count == 20){
-            sum += fbnc;
+        document.write("Day la so thu " + count + " : " + fbnc + "<br>");
+        sum += fbnc;
+        if (count == 20) {
             document.write("Tong cua 20 so dau tien la: " + sum + "<br>");
             break;
         }
+        count++;
         n++;
     }
+    //
+    // let n = 1;
+    // while (n > 0) {
+    //     let fbnc = fibonaci(n);
+    //     if (fbnc % 2 == 0 ){
+    //         document.write("Day la so fibonacci: " + n + ": " + fbnc + "<br>");
+    //     }
+    //     if (n == 30) {
+    //         break;
+    //     }
+    //     n++;
+    // }
 
     // // Tim 20 so dau tien chia het cho 5
     // let n = 1;
@@ -71,13 +83,20 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
         let F;
         if (n == 1) return F = 1;
         if (n == 2) return F = 1;
-        F = (1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n));
+        F = Math.floor((1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n)));
         //f(1) = 1;
         //f(2) = 1;
         //f(n) = f(n-1) + f(n-2);
         return F;
     }
 
+
+    function fibonaci2(n) {
+        debugger
+        if (n == 1) return 1;
+        else if (n == 2) return 1;
+        return fibonaci(n - 1) + fibonaci(n - 2);
+    }
 </script>
 
 

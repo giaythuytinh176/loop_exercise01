@@ -8,14 +8,6 @@
 
 <!--
 
-Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
-
-Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
-
-Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
-
-Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
-
 Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
 
 Bài 8: Game đoán số
@@ -37,33 +29,22 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
 
 <script>
 
-    // let n = +prompt("Nhap so duong n de tim ra F(n): ");
-    // let fbnc = fibonaci(n);
-    // document.write(fbnc);
-    let n = 1;
-    while (n > 0){
-        let fbnc = fibonaci(n);
-        document.write("Day la so fibonacci: " + n + ": " + fbnc + "<br>");
-        if (n == 20){
-            break;
+    let i = 1;
+    while (i < 100) {
+        if ((i % 3 == 0) && (i % 5 == 0)){
+            document.write(i + " FizzBuzz<br>");
         }
-        n++;
+        else if (i % 3 == 0){
+            document.write(i + " Fizz<br>");
+        }
+        else if (i % 5 == 0){
+            document.write(i + " Buzz<br>");
+        }
+        i++;
     }
-    
 
-        function fibonaci(n){
-            let F;
-            if (n == 1) return F = 1;
-            if (n == 2) return F = 1;
-            F =  (1/Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5))/2, n) - Math.pow((1 - Math.pow(5, 0.5))/2, n));
-            //f(1) = 1;
-            //f(2) = 1;
-            //f(n) = f(n-1) + f(n-2);
-            return F;
-        }
 
 </script>
-
 
 
 </body>

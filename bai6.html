@@ -8,6 +8,7 @@
 
 <!--
 
+
 Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
 
 Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
@@ -31,37 +32,71 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
 
 <script>
 
-
-
-    // Tim 30 so dau tien chia het cho 7
     let n = 1;
     let count = 1;
     let sum = 0;
     while (n > 0) {
         let fbnc = fibonaci(n);
         if (fbnc % 7 == 0) {
-            document.write("Day la " + count + " chia het cho 7: " + fbnc + "<br>");
-            count++;
-            if (count == 30){
-                sum += fbnc;
+            document.write("Day la so thu " + count + " chia het cho 7: " + fbnc + "<br>");
+            sum += fbnc;
+            if (count == 30) {
                 document.write("Tong cua 30 so dau tien la: " + sum + "<br>");
                 break;
             }
+            count++;
         }
         n++;
     }
+    //
+    // let n = 1;
+    // while (n > 0) {
+    //     let fbnc = fibonaci(n);
+    //     if (fbnc % 2 == 0 ){
+    //         document.write("Day la so fibonacci: " + n + ": " + fbnc + "<br>");
+    //     }
+    //     if (n == 30) {
+    //         break;
+    //     }
+    //     n++;
+    // }
+
+    // // Tim 20 so dau tien chia het cho 5
+    // let n = 1;
+    // let count = 0;
+    // let sum = 0;
+    // while (n > 0) {
+    //     let fbnc = fibonaci(n);
+    //     if (fbnc % 5 == 0) {
+    //         document.write("Day la so dau tien chia het cho 5: " + fbnc + "<br>");
+    //         count++;
+    //         if (count == 20){
+    //             sum += fbnc;
+    //             document.write("Tong cua 20 so dau tien la: " + sum + "<br>");
+    //             break;
+    //         }
+    //     }
+    //     n++;
+    // }
 
     function fibonaci(n) {
         let F;
         if (n == 1) return F = 1;
         if (n == 2) return F = 1;
-        F = (1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n));
+        F = Math.floor((1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n)));
         //f(1) = 1;
         //f(2) = 1;
         //f(n) = f(n-1) + f(n-2);
         return F;
     }
 
+
+    function fibonaci2(n) {
+        debugger
+        if (n == 1) return 1;
+        else if (n == 2) return 1;
+        return fibonaci(n - 1) + fibonaci(n - 2);
+    }
 </script>
 
 
