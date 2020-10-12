@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+11<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,13 +19,14 @@
 
 
     function countClick() {
-        let count = 1;
-        while (count < 4) {
             let khoangDoan = prompt("Nhap khoang muon du doan, su dung dau , de ghi khoang: ");
             let kDoan = khoangDoan.split(",");
             //console.log(kDoan);
             kDoan[1] = +kDoan[1];
             kDoan[0] = +kDoan[0];
+
+        let count = 1;
+        while (count < 4) {
             let numRandom = getRndInteger(kDoan[0], kDoan[1]);
             let numDoan = prompt("Moi nhap so du doan trong khoang" + " (" + kDoan[0] + "," + kDoan[1] + "): ");
             //alert(numRandom);

@@ -70,7 +70,7 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
         let F;
         if (n == 1) return F = 1;
         if (n == 2) return F = 1;
-        F = (1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n));
+        F = Math.floor((1 / Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5)) / 2, n) - Math.pow((1 - Math.pow(5, 0.5)) / 2, n)));
         //f(1) = 1;
         //f(2) = 1;
         //f(n) = f(n-1) + f(n-2);
