@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <h1>Hãy thử đoán xem</h1>
+    <input type="button" id="click" onclick="countClick()" value="Choi">
+</center>
+
+<script>
+
+
+    function countClick() {
+        let count = 1;
+        while (count < 4) {
+            let khoangDoan = prompt("Nhap khoang muon du doan, su dung dau , de ghi khoang: ");
+            let kDoan = khoangDoan.split(",");
+            //console.log(kDoan);
+            kDoan[1] = +kDoan[1];
+            kDoan[0] = +kDoan[0];
+            let numRandom = getRndInteger(kDoan[0], kDoan[1]);
+            let numDoan = prompt("Moi nhap so du doan trong khoang" + " (" + kDoan[0] + "," + kDoan[1] + "): ");
+            //alert(numRandom);
+            if (numDoan == numRandom) {
+                alert("thông báo chúc mừng ban da du doan dung so: " + numRandom);
+                break;
+            } else {
+                count++;
+                alert("Du toan sai roi. So ban du doan la: " + numDoan + " . So random la: " + numRandom);
+            }
+        }
+    }
+
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+</script>
+
+</body>
+</html>
