@@ -43,7 +43,7 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
     let n = 1;
     let count = 1;
     while (n > 0){
-        let fbnc = fibonaci(n);
+        let fbnc = fibonacci(n);
         document.write("Day la so fibonacci: " + count + ": " + fbnc + "<br>");
         if (count == 20){
             break;
@@ -51,12 +51,18 @@ Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay b�
         count++;
         n++;
     }
+
+    function fibonacci(n){
+        if (n == 1) return 1;
+        if (n == 2) return 1;
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
     
 
-        function fibonaci(n){
+        function fibonacci2(n){
             let F;
-            if (n == 1) return F = 1;
-            if (n == 2) return F = 1;
+            if (n == 1) return 1;
+            if (n == 2) return 1;
             F =  Math.floor((1/Math.pow(5, 0.5)) * (Math.pow((1 + Math.pow(5, 0.5))/2, n) - Math.pow((1 - Math.pow(5, 0.5))/2, n)));
             //f(1) = 1;
             //f(2) = 1;
